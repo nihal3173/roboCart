@@ -30,24 +30,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
-        Button btn1 = findViewById(R.id.btn1);
+       /* Button btn1 = findViewById(R.id.btn1);
         Button btn2 = findViewById(R.id.btn2);
         Button btn3 = findViewById(R.id.btn3);
-        Button btn4 = findViewById(R.id.btn4);
+        Button btn4 = findViewById(R.id.btn4); */
         Button btn5 = findViewById(R.id.btn5);
         Button btn6 = findViewById(R.id.btn6);
-        btn1.setOnClickListener(this);
+        Button btn7 = findViewById(R.id.btn7);
+        Button btn8 = findViewById(R.id.btn8);
+     /*   btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
         btn3.setOnClickListener(this);
-        btn4.setOnClickListener(this);
+        btn4.setOnClickListener(this); */
         btn5.setOnClickListener(this);
         btn6.setOnClickListener(this);
+        btn7.setOnClickListener(this);
+        btn8.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn1:
+      /*      case R.id.btn1:
                 RobotActionProvider.getInstance().moveFront(20);
                 break;
             case R.id.btn2:
@@ -58,16 +62,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn4:
                 RobotActionProvider.getInstance().moveLeft(-90, 0);
-                break;
+                break; */
             case R.id.btn5:
                 //navigate to point "x1", you should mark x1 in your map in advance.
                 RobotActionProvider.getInstance().sendRosCom("point[x1]");
                 break;
             case R.id.btn6:
                 //navigate to charge pile, you should mark charge pile in your map in advance.
-                RobotActionProvider.getInstance().sendRosCom("point_charge[charge_pile]");
+                RobotActionProvider.getInstance().sendRosCom("point_charge[charging_pile]");
+            case R.id.btn7:
+                RobotActionProvider.getInstance().sendRosCom("point[Home]");
+            case R.id.btn8:
+                RobotActionProvider.getInstance().stopMove();
             default:
-                //for more command, please refer to our document
+
                 break;
         }
     }
