@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn6:
                 //navigate to charge pile, you should mark charge pile in your map in advance.
                 RobotActionProvider.getInstance().sendRosCom("point_charge[charging_pile]");
+                RobotActionProvider.getInstance().sendRosCom("goal: just_charge");
+
             case R.id.btn7:
                 RobotActionProvider.getInstance().sendRosCom("point[Home]");
             case R.id.btn8:
